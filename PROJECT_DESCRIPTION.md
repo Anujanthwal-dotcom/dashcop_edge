@@ -129,6 +129,10 @@ When you finish training your custom models, place the `.onnx` files into the `w
 
 *Note: All 4 model files are required. If any file is missing, the system immediately throws an explicit error and halts.*
 
+> **Free Cloud Training Notebooks:**
+> - **Google Colab:** [train_on_colab.ipynb](file:///home/anuj/Desktop/DashCop_Recreated/train_on_colab.ipynb) (Tesla T4 GPU)
+> - **Kaggle:** [train_on_kaggle.ipynb](file:///home/anuj/Desktop/DashCop_Recreated/train_on_kaggle.ipynb) (GPU P100 / Dual T4, 30 hrs/week)
+
 ---
 
 ## 5. Project Directory Structure
