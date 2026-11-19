@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# Weights & Datasets
+weights/*.onnx
+weights/*.pt
+data/*.mp4
+
+# Generated violations
+output/violations/*.jpg
+output/violations/*.json
+!output/violations/.gitkeep

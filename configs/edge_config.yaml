@@ -1,0 +1,41 @@
+# DashCop Edge Runtime Configuration
+
+source:
+  # Toggle input mode: "video" (rate-paced file playback) or "usb" (live camera)
+  mode: "video"
+  # Video file path (if mode == "video") or device index/path e.g. "0" or "/dev/video0" (if mode == "usb")
+  path: "data/sample.mp4"
+  # Target FPS pacing for video file simulation (prevents reading faster than real-time)
+  target_fps: 30
+  # Maximum frame queue size before dropping frames (keeps latency near zero)
+  queue_size: 3
+
+models:
+  weights_dir: "weights"
+  sac_model: "weights/sac.onnx"
+  hnh_model: "weights/hnh.onnx"
+  lp_det_model: "weights/lp_det.onnx"
+  lp_ocr_model: "weights/lp_ocr.onnx"
+  # Provider: "cpu", "cuda", or "tensorrt"
+  provider: "cpu"
+  confidence_threshold: 0.5
+
+tracker:
+  # Online Fast CA-SORT parameters (Hungarian / LAP based)
+  max_age: 30
+  min_hits: 3
+  iou_threshold: 0.3
+  assoc_iou_threshold: 0.25
+
+violations:
+  # Consecutive violating frames required before ticket trigger
+  min_consecutive_frames: 5
+  # Buffer size for best-shot quality evaluation
+  best_shot_buffer_size: 15
+  # Output directory for e-ticket JSON and evidence snapshots
+  output_dir: "output/violations"
+
+display:
+  # Show live OpenCV HUD window with bounding boxes & telemetry
+  enabled: true
+  window_name: "DashCop Edge Real-Time Monitor"
