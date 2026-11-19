@@ -31,6 +31,9 @@ Place your trained `.onnx` models into the `weights/` directory:
 
 *(All 4 models are strictly required. If any file is missing, the system throws a descriptive error and stops).*
 
+> **Train on Google Colab for Free:**
+> You can train all 4 models directly on Google Colab's free GPU without downloading the dataset to your PC using the included notebook: [train_on_colab.ipynb](file:///home/anuj/Desktop/DashCop_Recreated/train_on_colab.ipynb). It automatically pulls RideSafe-400 in the cloud, trains YOLO, and downloads the exported `.onnx` files for you.
+
 ### 3. Run the System
 
 #### Mode A: Real-Time Video File Simulation

@@ -21,12 +21,11 @@ class OnnxModelSession:
     def _initialize_session(self) -> None:
         """Loads the ONNX model using onnxruntime. Raises FileNotFoundError if missing."""
         if not os.path.isfile(self.model_path):
-            abs_path = os.path.abspath(self.model_path)
+            folder_name = os.path.dirname(self.model_path) or "weights"
             error_message = (
                 f"\n[ONNX Engine] FATAL ERROR: Required model file not found!\n"
                 f"  Missing file : '{self.model_path}'\n"
-                f"  Absolute path: '{abs_path}'\n"
-                f"  Execution stopped. Please place the trained ONNX model at this path.\n"
+                f"  Execution stopped. Please place the trained ONNX model in the '{folder_name}' folder.\n"
             )
             print(error_message, file=sys.stderr)
             raise FileNotFoundError(f"Missing required ONNX model: '{self.model_path}'")
